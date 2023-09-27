@@ -14,8 +14,10 @@ const server = fastify()
 
 const database = new DatabaseMemory()
 
-server.get('/videos', () => {
-  const videos = database.list()
+server.get('/videos', (request) => {
+  const search = request.query.search
+
+  const videos = database.list(search)
 
   return videos
 });
@@ -32,12 +34,25 @@ server.post('/videos', (request, reply) => {
   return reply.status(201).send()
 })
 
-server.put('/videos/:id', () => {
-  
+server.put('/videos/:id', (request, reply) => {
+  const videoId = request.params.id
+  const { title, description, duration } = request.body
+
+  const video = database.update(videoId, {
+    title,
+    description,
+    duration,
+  })
+
+  return reply.status(204).send()
 })
 
-server.delete('/videos/:id', () => {
-  
+server.delete('/videos/:id', (request, reply) => {
+  const videoId = request.params.id
+
+  database.delete(videoId)
+
+  return reply.status(204).send()
 })
 
 server.listen({
