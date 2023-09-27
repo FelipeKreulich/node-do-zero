@@ -21,6 +21,7 @@
   "devDependencies": {
     "commitizen": "^4.3.0",
     "cz-conventional-changelog": "^3.3.0",
+    "dotenv": "^16.3.1",
     "husky": "^8.0.3"
   },
   "config": {
@@ -29,6 +30,7 @@
     }
   },
   "dependencies": {
-    "fastify": "^4.23.2"
+    "fastify": "^4.23.2",
+    "postgres": "^3.3.5"
   }
 }

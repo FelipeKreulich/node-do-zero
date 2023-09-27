@@ -7,15 +7,15 @@ Content-Type: application/json
   "duration": 180
 }
 ###
-GET http://localhost:3333/videos?search=node
+GET http://localhost:3333/videos
 ###
-PUT http://localhost:3333/videos/8c19c498-aa79-4a75-b0f4-60b67c09e9f5
+PUT http://localhost:3333/videos/721a4004-f876-49e2-9cb7-10283b2dac98
 Content-Type: application/json
 
 {
-  "title": "Vídeo 03",
-  "description": "Esse é o vídeo 01",
+  "title": "Vídeo 02",
+  "description": "Esse é o vídeo 02",
   "duration": 180
 }
 ###
-DELETE http://localhost:3333/videos/b8a6eeb5-8fd6-46a6-a876-a5a3cf6a51fe
+DELETE http://localhost:3333/videos/721a4004-f876-49e2-9cb7-10283b2dac98
